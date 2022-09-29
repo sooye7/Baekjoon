@@ -38,18 +38,17 @@ public class BigNum {
         StringBuilder b= new StringBuilder(st.nextToken());
         if(a.length()!=b.length()){
             if(a.length()>b.length()){
-                for(int i=0;i<a.length()-b.length();i++){
+                while(b.length()!=a.length()){
                     b.insert(0, "0");
                 }
             }
-            else{
-                for(int i=0;i<b.length()-a.length();i++){
+            else {
+                while (a.length() != b.length()) {
                     a.insert(0, "0");
                 }
             }
             sumOfAB(a,b);
         }
-
         else{
             sumOfAB(a,b);
         }
