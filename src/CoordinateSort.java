@@ -11,24 +11,20 @@ public class CoordinateSort {
 
         PriorityQueue<Point> pq=new PriorityQueue<>();
         // 리스트 정렬
-//        for(int i=0;i<N;i++){
-//            StringTokenizer st=new StringTokenizer(br.readLine()," ");
-//            list.add(new Point(Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken())));
-//            //pq.offer(new Point(Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken())));
-//        }
-////        for(Point p:pq)
-////            System.out.println(p.getX()+" "+p.getY());
-////
-//        list.sort(new Comparator<Point>() {
-//            @Override
-//            public int compare(Point o1, Point o2) {
-//                if(o1.getX()==o2.getX())
-//                    return o1.getY()-o2.getY();
-//                return o1.getX()-o2.getX();
-//            }
-//        });
-//        for(Point p:list)
-//            System.out.println(p.getX()+" "+p.getY());
+        for(int i=0;i<N;i++){
+            StringTokenizer st=new StringTokenizer(br.readLine()," ");
+            list.add(new Point(Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken())));
+        }
+        list.sort(new Comparator<Point>() {
+            @Override
+            public int compare(Point o1, Point o2) {
+                if(o1.getX()==o2.getX())
+                    return o1.getY()-o2.getY();
+                return o1.getX()-o2.getX();
+            }
+        });
+        for(Point p:list)
+            System.out.println(p.getX()+" "+p.getY());
 
         // 우선순위 큐 : 우선순위가 높은 데이터가 먼저 나감
         for(int i=0;i<N;i++){
