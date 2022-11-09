@@ -7,11 +7,11 @@ public class Taxi {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         int r=Integer.parseInt(br.readLine());
         // 유클리드 기하학 원
-        String ans1=String.format("%.6f",Math.round(r*r*Math.PI*1000000)/1000000.0);
+        String ans1=String.format("%.6f",(double)r*r*Math.PI);
         System.out.println(ans1);
 
         // 택시 기하학 원
-        String ans2=String.format("%.6f",Math.round((double)(r*2)*(r*2)/2*1000000)/1000000.0);
+        String ans2=String.format("%.6f",(double)(r*2)*(r*2)/2*1000000);
         System.out.println(ans2);
 
     }
