@@ -16,7 +16,6 @@ public class FashionKing {
             int headgear=0, eyewear=0, face=0;
             for(int j=0;j<num;j++){
                 String[] str=br.readLine().split(" ");
-                Set<String> set=new HashSet<>();
                 if(str[1].equals("headgear"))
                     headgear++;
                 else if(str[1].equals("eyewear"))
@@ -24,14 +23,7 @@ public class FashionKing {
                 else
                     face++;
             }
-            int result=headgear+eyewear+face;
-            if(headgear==0)
-                headgear=1;
-            else if(eyewear==0)
-                eyewear=1;
-            else if(face==0)
-                face=1;
-            result+=headgear*eyewear*face;
+            int result=(headgear+1)*(eyewear+1)*(face+1)-1;  // 입지 않는 경우를 추가해줘야 하므로 +1, 모든 옷을 입지 않는 경우를 빼주기 -1
             System.out.println(result);
 
         }
