@@ -6,7 +6,6 @@ import java.util.StringTokenizer;
 public class NandM2 {
     public static int n;
     public static int m;
-    public static boolean[] visited;
     public static int[] arr;
     public static void main(String[] args) throws IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
@@ -14,7 +13,6 @@ public class NandM2 {
 
         n=Integer.parseInt(st.nextToken());
         m= Integer.parseInt(st.nextToken());
-        visited=new boolean[n+1];
         arr=new int[m];
         dfs(1,0);
 
@@ -30,12 +28,8 @@ public class NandM2 {
         }
 
         for(int i=r;i<=n;i++){
-            if(!visited[i]){
-                visited[i]=true;
-                arr[depth]=i;
-                dfs(i+1,depth+1);
-                visited[i]=false;
-            }
+            arr[depth]=i;
+            dfs(i+1,depth+1);
         }
     }
 }
