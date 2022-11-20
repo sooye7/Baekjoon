@@ -46,6 +46,7 @@ public class PutOperator {
         max=0;
         min=9999;
 
+
         dfs(0);
         // 값 계산
 
@@ -55,6 +56,8 @@ public class PutOperator {
 
     // 연산자 순서 정의
     public static void dfs(int depth){
+        if(depth==0)
+            value=nums[0];
         // max, min 구하기
         if(depth==n-1){
             max=Math.max(max,value);
@@ -62,11 +65,8 @@ public class PutOperator {
             return;
         }
         for(int i=0;i<n-1;i++){
-            if(depth==0)
-                value=nums[0];
             if(!visited[i]){
                 System.out.println("v"+value+op[i]+"n"+nums[depth+1]+"de"+depth);
-
                 visited[i]=true;
                 // 연산 수행 value
                 if(op[i]=='+')
