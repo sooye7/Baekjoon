@@ -12,7 +12,11 @@ public class Change {
             n-=2;
             count++;
         }
-        count+=n/5;
-        System.out.println(count);
+        if(n<0)
+            System.out.println(-1);
+        else {
+            count += n / 5;
+            System.out.println(count);
+        }
     }
 }
