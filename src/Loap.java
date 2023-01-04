@@ -15,10 +15,11 @@ public class Loap {
         Arrays.sort(arr);
         for(int i=0;i<n;i++){
             int sum=0;
-            for(int j=i;j<n;j++){
-                if(arr[i]<=arr[j])
-                    sum+=arr[i];
-            }
+            sum=arr[i]*(n-i);
+//            for(int j=i;j<n;j++){
+//                if(arr[i]<=arr[j])
+//                    sum+=arr[i];
+//            }
             max=Math.max(max, sum);
         }
         System.out.println(max);
