@@ -15,20 +15,17 @@ public class Hamburger {
         StringBuilder sb=new StringBuilder(pos);
         int count=0;
         for(int i=0;i<sb.length();i++){
-            int tmp=k;
             if(sb.charAt(i)=='H'||sb.charAt(i)==' ') continue;
-            while(tmp>0){
-                if(i-tmp>=0&&sb.charAt(i-tmp)=='H'){
-                    sb.replace(i-tmp,i-tmp+1," ");
+            int tmp=k;
+            int start=i-tmp, end=i+tmp;
+            if(i-tmp<0) start=0;
+            if(i+tmp>=sb.length()) end=sb.length()-1;
+            for(int j=start;j<=end;j++){
+                if(sb.charAt(j)=='H'){
+                    sb.replace(j,j+1," ");
                     count++;
                     break;
                 }
-                else if(i+tmp<sb.length()&&sb.charAt(i+tmp)=='H'){
-                    sb.replace(i+tmp,i+tmp+1," ");
-                    count++;
-                    break;
-                }
-                tmp--;
             }
         }
         System.out.println(count);
