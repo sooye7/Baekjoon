@@ -16,21 +16,20 @@ public class Hamburger {
         int count=0;
         for(int i=0;i<sb.length();i++){
             int tmp=k;
-            if(sb.charAt(i)=='H') continue;
+            if(sb.charAt(i)=='H'||sb.charAt(i)==' ') continue;
             while(tmp>0){
-                if(i-k>=0&&sb.charAt(i-k)=='H'){
-                    sb.replace(i-k,i-k+1," ");
+                if(i-tmp>=0&&sb.charAt(i-tmp)=='H'){
+                    sb.replace(i-tmp,i-tmp+1," ");
                     count++;
                     break;
                 }
-                else if(i+k<sb.length()&&sb.charAt(i+k)=='H'){
-                    sb.replace(i+k,i+k+1," ");
+                else if(i+tmp<sb.length()&&sb.charAt(i+tmp)=='H'){
+                    sb.replace(i+tmp,i+tmp+1," ");
                     count++;
                     break;
                 }
                 tmp--;
             }
-            System.out.println(sb);
         }
         System.out.println(count);
     }
